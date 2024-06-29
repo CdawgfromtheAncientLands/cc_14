@@ -1,0 +1,11 @@
+{
+    "name": "cc14",
+    "version": "0.0.1",
+    "description": "Develop financial calculator that performs basic calculations such as interest rates, loan payments, and investment returns.",
+    "main": "cc_14-script.js",
+    "type": "module",
+
+    "keywords": [],
+    "author": "",
+    "license": "ISC"
+  }
