@@ -1,3 +1,3 @@
-export function calculateLoanPayment(principal, rate, numOfPeriods) {
-    return principal * (rate * (1+rate)^numOfPeriods)/((1+rate)^numOfPeriods-1)
+export function calculateLoanPayment(principal, interestRate, numOfPeriods) {
+    return principal * (interestRate * (1+interestRate)^numOfPeriods)/((1+interestRate)^numOfPeriods-1)
 };

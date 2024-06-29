@@ -1,3 +1,3 @@
-export function calculateInvestmentReturn(principal, rate, yearsInvested) {
-    return M = P(r(1+r)^n)/((1+r)^n-1)
+export function calculateInvestmentReturn(principal, interestRate, timesCompounded, numOfPeriods) {
+    return principal * Math.pow(1 + interestRate / timesCompounded, timesCompounded * numOfPeriods)
 };
