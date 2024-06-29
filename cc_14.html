@@ -4,9 +4,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title></title>
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="interest.js"></script>
+    <script src="loanpayment.js"></script>
+    <script src="investmentreturn.js"></script>
+    <script src="CurrencyConverter.js"></script>
+    <script src="cc_14-script.js"></script>
 </head>
 <body>
-  
+    <div class="container" id="interest-calculator">
+        <h2>Calculate Interest</h2>
+        <label for="interest-principal">Principal:</label>
+        <input type="text" id="interest-principal">
+        <label for="interest-rate">Interest Rate:</label>
+        <input type="text" id="interest-rate">
+        <label for="interest-periods">Number of Periods:</label>
+        <input type="text" id="interest-periods">
+        <button id="calculate-interest">Calculate Interest</button>
+        <p id="interest-result"></p>
+    </div>
+
+    <div class="container" id="loan-calculator">
+        <h2>Calculate Loan Payment</h2>
+        <label for="loan-principal">Principal:</label>
+        <input type="text" id="loan-principal">
+        <label for="loan-rate">Interest Rate:</label>
+        <input type="text" id="loan-rate">
+        <label for="loan-periods">Number of Periods:</label>
+        <input type="text" id="loan-periods">
+        <button id="calculate-loan">Calculate Loan Payment</button>
+        <p id="loan-result"></p>
+    </div>
+
+    <div class="container" id="investment-calculator">
+        <h2>Calculate Investment Return</h2>
+        <label for="investment-principal">Principal:</label>
+        <input type="text" id="investment-principal">
+        <label for="investment-rate">Interest Rate:</label>
+        <input type="text" id="investment-rate">
+        <label for="investment-compounds">Compounds Per Period:</label>
+        <input type="text" id="investment-compounds">
+        <label for="investment-periods">Number of Periods:</label>
+        <input type="text" id="investment-periods">
+        <button id="calculate-investment">Calculate Investment Return</button>
+        <p id="investment-result"></p>
+    </div>
 </body>
 </html>
