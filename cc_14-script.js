@@ -4,28 +4,61 @@ import {calculateLoanPayment} from "./modules/loanpayment.js";
 import {calculateInvestmentReturn} from "./modules/investmentreturn.js";
 import {USDconvert} from "./modules/CurrencyConverter.js";
 
+//check for non-integer inputs and NaN inputs
+function validateInput(value) {
+    return !isNaN(value) && /^\d+(\.\d+)?$/.test(value);
+}
+
 function calculateAndDisplayInterest() {
-    const principal = parseFloat(document.getElementById("interest-principal").value);
-    const interestRate = parseFloat(document.getElementById("interest-rate").value);
-    const numOfPeriods = parseFloat(document.getElementById("interest-periods").value);
-    const result = calculateInterest(principal, interestRate, numOfPeriods);
+    const principal = document.getElementById("interest-principal").value;
+    const interestRate = document.getElementById("interest-rate").value;
+    const numOfPeriods = document.getElementById("interest-periods").value;
+
+    if (!validateInput(principal) || !validateInput(interestRate) || !validateInput(numOfPeriods)) {
+        alert("All input fields must be filled out with numbers only, with none left blank.");
+        return;
+    }
+
+    const principalNum = parseFloat(principal);
+    const interestRateNum = parseFloat(interestRate);
+    const numOfPeriodsNum = parseFloat(numOfPeriods);
+    const result = calculateInterest(principalNum, interestRateNum, numOfPeriodsNum);
     document.getElementById("interest-result").innerText = "Interest: " + USDconvert(result);
 }
 
 function calculateAndDisplayLoanPayment() {
-    const principal = parseFloat(document.getElementById("loan-principal").value);
-    const interestRate = parseFloat(document.getElementById("loan-rate").value);
-    const numOfPeriods = parseFloat(document.getElementById("loan-periods").value);
-    const result = calculateLoanPayment(principal, interestRate, numOfPeriods);
+    const principal = document.getElementById("loan-principal").value;
+    const interestRate = document.getElementById("loan-rate").value;
+    const numOfPeriods = document.getElementById("loan-periods").value;
+
+    if (!validateInput(principal) || !validateInput(interestRate) || !validateInput(numOfPeriods)) {
+        alert("All input fields must be filled out with numbers only, with none left blank.");
+        return;
+    }
+
+    const principalNum = parseFloat(principal);
+    const interestRateNum = parseFloat(interestRate);
+    const numOfPeriodsNum = parseFloat(numOfPeriods);
+    const result = calculateLoanPayment(principalNum, interestRateNum, numOfPeriodsNum);
     document.getElementById("loan-result").innerText = "Loan Payment: " + USDconvert(result);
 }
 
 function calculateAndDisplayInvestmentReturn() {
-    const principal = parseFloat(document.getElementById("investment-principal").value);
-    const interestRate = parseFloat(document.getElementById("investment-rate").value);
-    const compoundsPerPeriod = parseFloat(document.getElementById("investment-compounds").value);
-    const numOfPeriods = parseFloat(document.getElementById("investment-periods").value);
-    const result = calculateInvestmentReturn(principal, interestRate, compoundsPerPeriod, numOfPeriods);
+    const principal = document.getElementById("investment-principal").value;
+    const interestRate = document.getElementById("investment-rate").value;
+    const compoundsPerPeriod = document.getElementById("investment-compounds").value;
+    const numOfPeriods = document.getElementById("investment-periods").value;
+
+    if (!validateInput(principal) || !validateInput(interestRate) || !validateInput(compoundsPerPeriod) || !validateInput(numOfPeriods)) {
+        alert("All input fields must be filled out with numbers only, with none left blank.");
+        return;
+    }
+
+    const principalNum = parseFloat(principal);
+    const interestRateNum = parseFloat(interestRate);
+    const compoundsPerPeriodNum = parseFloat(compoundsPerPeriod);
+    const numOfPeriodsNum = parseFloat(numOfPeriods);
+    const result = calculateInvestmentReturn(principalNum, interestRateNum, compoundsPerPeriodNum, numOfPeriodsNum);
     document.getElementById("investment-result").innerText = "Investment Return: " + USDconvert(result);
 }
 
